@@ -105,16 +105,23 @@ public class NewColor extends LinearOpMode {
             telemetry.addData("Blue ", sensorColor.blue());
             telemetry.addData("Hue", hsvValues[0]);
 
+            if (runtime.seconds() >= 0 && runtime.seconds() < 5) {
+                servo0.setPosition(1);
+
+            } else {
+                servo0.setPosition(0);
+            }
 
             //DROP SERVO
 
             //if(runtime.seconds() >= 0 && runtime.seconds() < 29){
             //blue
-            if (hsvValues[0] >= 150 && hsvValues[0] <= 250) {
-                frontLeftMotor.setPower(.8);
-                frontRightMotor.setPower(-.8);
-                backLeftMotor.setPower(.8);
-                backRightMotor.setPower(-.8);
+            if (hsvValues[0] >= 130 && hsvValues[0] <= 250) {
+                frontLeftMotor.setPower(-.2);
+                frontRightMotor.setPower(.2);
+                backLeftMotor.setPower(-.2);
+                backRightMotor.setPower(.2);
+                telemetry.addData(" In Blue ", sensorColor.blue()); //blue jitter
             } else {
                 frontLeftMotor.setPower(0);
                 frontRightMotor.setPower(0);
@@ -123,10 +130,11 @@ public class NewColor extends LinearOpMode {
             }
             //red
             if (hsvValues[0] >= 300 && hsvValues[0] <= 400) {
-                frontLeftMotor.setPower(-.8);
-                frontRightMotor.setPower(.8);
-                backLeftMotor.setPower(-.8);
-                backRightMotor.setPower(.8);
+                frontLeftMotor.setPower(.2);
+                frontRightMotor.setPower(-.2);
+                backLeftMotor.setPower(.2);
+                backRightMotor.setPower(-.2);
+                telemetry.addData(" In Red  ", sensorColor.red());
 
             } else {
                 frontLeftMotor.setPower(0);
@@ -135,11 +143,6 @@ public class NewColor extends LinearOpMode {
                 backRightMotor.setPower(0);
             }
 
-            if (runtime.seconds() >= 0 && runtime.seconds() < .5) {
-                servo0.setPosition(1);
-
-            } else {
-                servo0.setPosition(0);
 
                 // change the background color to match the color detected by the RGB sensor.
                 // pass a reference to the hue, saturation, and value array as an argument
@@ -161,5 +164,5 @@ public class NewColor extends LinearOpMode {
             });
         }
     }
-}
+
 
