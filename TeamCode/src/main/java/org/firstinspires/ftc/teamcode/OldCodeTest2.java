@@ -159,15 +159,26 @@ public class OldCodeTest2 extends OpMode {
         //if (hsvValues[0] >= 150 && hsvValues[0] <= 250) {
 
 
-            if(gamepad1.right_bumper) {
-            frontleftmotor.setPower(.2);
-            frontrightmotor.setPower(-.2);
-        }
-        if(gamepad1.left_bumper) {
-            frontleftmotor.setPower(-.2);
-            frontrightmotor.setPower(.2);
+        if(gamepad1.right_bumper) {
+            //frontleftmotor.setPower(.2);
+            //frontrightmotor.setPower(-.2);
+              frontleftmotor.setPower(.4);
+              frontrightmotor.setPower(-.4);
         }
 
+        if(gamepad1.left_bumper) {
+            frontleftmotor.setPower(-.4);
+            frontrightmotor.setPower(.4);
+        }
+        if (gamepad2.y) {
+                liftmotor.setPower(.70);
+
+        } else if (gamepad2.a) {
+            liftmotor.setPower(-.70);
+        } else {
+            liftmotor.setPower(0);
+        }
+/*
         //TEST DISTANCE SENSOR TO SHUT OFF MOTOR, Must be > 6mm
         if (gamepad2.y) {
             if (sensordistance.getDistance(DistanceUnit.CM) >= 6)  {
@@ -178,6 +189,7 @@ public class OldCodeTest2 extends OpMode {
                 liftmotor.setPower(0);
                  }
         }
+*/
 /*
         // TEST TOUCH SWITCH TURNING OFF MOTOR
         //.35 was the speed for #1 lifter
@@ -201,7 +213,7 @@ public class OldCodeTest2 extends OpMode {
             servo0.setPosition(1);
             servo1.setPosition(0);
         }
-        else {
+        if (gamepad2.b) {
             servo0.setPosition(0);
             servo1.setPosition(1);
         }
@@ -235,4 +247,5 @@ public class OldCodeTest2 extends OpMode {
     public void stop() {
     }
 }
+
 
