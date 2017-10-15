@@ -1,5 +1,5 @@
 
-TELEOP WITH CODE FOR COLOR AND DISTANCE AS WELL AS TOUCH SENSOR
+//TELEOP WITH CODE FOR COLOR AND DISTANCE AS WELL AS TOUCH SENSOR
 
 //package org.firstinspires.ftc.teamcode;
 //import com.ftdi.j2xx.D2xxManager;
@@ -23,10 +23,10 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 import java.util.Locale;  //Needed for Color Sensor
 
-@TeleOp(name="OldCodeTest2", group="Iterative OpMode")  // @Autonomous(...) is the other common choice
+@TeleOp(name="TeleOp2", group="Iterative OpMode")  // @Autonomous(...) is the other common choice
 //@Disabled
 
-public class OldCodeTest2 extends OpMode {
+public class TeleOp2 extends OpMode {
     /* Declare OpMode members. */
 
     private ElapsedTime runtime = new ElapsedTime();
@@ -118,7 +118,6 @@ public class OldCodeTest2 extends OpMode {
         digitaltouch.setMode(DigitalChannel.Mode.INPUT);
 
 
-
         // get a reference to the color sensor.
         sensorcolor = hardwareMap.get(ColorSensor.class, "sensorcolordistance");
 
@@ -166,6 +165,8 @@ public class OldCodeTest2 extends OpMode {
               frontrightmotor.setPower(-.4);
         }
 
+        //.35 was the speed for #1 lifter
+        //.70 was the speed for #2 lifter
         if(gamepad1.left_bumper) {
             frontleftmotor.setPower(-.4);
             frontrightmotor.setPower(.4);
@@ -192,8 +193,6 @@ public class OldCodeTest2 extends OpMode {
 */
 /*
         // TEST TOUCH SWITCH TURNING OFF MOTOR
-        //.35 was the speed for #1 lifter
-        //.70 was the speed for #2 lifter
         if (gamepad2.y) {
             if (digitaltouch.getState() == true) {
                 telemetry.addData("Digital Touch", "Is Not Pressed");
@@ -247,5 +246,6 @@ public class OldCodeTest2 extends OpMode {
     public void stop() {
     }
 }
+
 
 
