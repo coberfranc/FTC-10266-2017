@@ -10,8 +10,9 @@ backrightdrive
 
 liftmotor		2
 
-servo0			0		
-servo1			1
+servo0			0		//Grabber
+servo1			1   //Grabber
+servo2      2   //Sensor Arm
 
 digitaltouch		0/1
 sensordigital		0/1
