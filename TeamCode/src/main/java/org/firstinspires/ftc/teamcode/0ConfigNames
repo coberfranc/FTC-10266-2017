@@ -8,14 +8,14 @@ frontrightdrive		1
 backleftdrive
 backrightdrive
 
-liftmotor		2
+liftmotor		      2
 
-servo0			0		//Grabber
-servo1			1   //Grabber
-servo2      2   //Sensor Arm
+servo0			      0  //Grabber
+servo1			      1  //Grabber
+servo2            2  //Sensor Arm
 
-digitaltouch		0/1
-sensordigital		0/1
+digitaltouch		  0/1
+sensordigital		  0/1
 
 sensorcolordistance	0
 
